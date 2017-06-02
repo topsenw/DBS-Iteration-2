@@ -16,6 +16,9 @@ CREATE TABLE Tweets(#Erstellt Tabelle mit Werten für Entität Tweet
 	PRIMARY KEY (TWEET_ID)
 );
 
+
+#SQL Befehl für das Laden der Tweet CSV Daten in den Table Hashtag
+#wird im Python Datenimport verwendet
 LOAD DATA LOW_PRIORITY LOCAL INFILE 'C:\\Users\\topsen\\Desktop\\new-american-election.csv' 
 INTO TABLE `americanelectiontweets`.`tweets` 
 CHARACTER SET ascii FIELDS 
@@ -33,6 +36,8 @@ CREATE TABLE Hashtag(#Erstellt Tabelle mit Werten für Entität Hashtags
 	PRIMARY KEY (HASHTAG_ID)
 );
 
+#SQL Befehl für das Laden der HASHTAG CSV Daten in den Table Hashtag
+#wird im Python Datenimport verwendet
 LOAD DATA LOW_PRIORITY LOCAL INFILE 'C:\\Users\\topsen\\Desktop\\hashtags.csv' 
 INTO TABLE `americanelectiontweets`.`hashtag` 
 CHARACTER SET ascii FIELDS 
@@ -46,6 +51,7 @@ LINES TERMINATED BY '\r\n' (`INDEX_TWEET`, `HASHTAGS`, `HASHTAG_ID`);
 #       lines terminated by "\n"
 #       ignore 1 lines;
 
+#Erstellt Tabelle für die Relation Contains
 CREATE TABLE Contains
 	HASHTAG_ID INT NOT NULL,
 	TWEET_ID INT NOT NULL,

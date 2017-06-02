@@ -36,7 +36,7 @@ CREATE TABLE Hashtag(#Erstellt Tabelle mit Werten für Entität Hashtags
 	PRIMARY KEY (HASHTAG_ID)
 );
 
-#SQL Befehl für das Laden der HASHTAG CSV Daten in den Table Hashtag
+#SQL Befehl für das Laden der HASHTAG CSV Daten in den Table Tweet
 #wird im Python Datenimport verwendet
 LOAD DATA LOW_PRIORITY LOCAL INFILE 'C:\\Users\\topsen\\Desktop\\hashtags.csv' 
 INTO TABLE `americanelectiontweets`.`hashtag` 
